@@ -14,8 +14,29 @@ var keyBox = document.search.key;
 function onchange(e){
     var printBlock = document.getElementById("printBlock");
     var val = e.target.value;
-    alert(val);
-    val = 0;
+    function isNumeric(val) {
+
+       return !isNaN(parseFloat(val)) && isFinite(val);
+
+       // Метод isNaN пытается преобразовать переданный параметр в число.
+       // Если параметр не может быть преобразован, возвращает true, иначе возвращает false.
+       // isNaN("12") // false
+    }
+    if(!isNumeric(val) == true)
+    {
+       alert("Ошибка ввода");
+    }
+    if (val > 100) {
+      alert("Ошибка ввода");
+    }
+    if (val < 1) {
+      alert("Ошибка ввода");
+    }
+    if (val >= 1) {
+      if (val <=100) {
+        alert(val);
+      }
+    }
 }
 
 keyBox.addEventListener("change", onchange);
