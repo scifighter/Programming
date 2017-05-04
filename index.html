@@ -22,20 +22,20 @@ function onchange(e){
        // Если параметр не может быть преобразован, возвращает true, иначе возвращает false.
        // isNaN("12") // false
     }
-    if(!isNumeric(val) == true)
+
+    function isCorrect( val ) {
+      if ( isNumeric( val ) && val>=1 && val<=100 ){
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    if( !isCorrect(val) )
     {
        alert("Ошибка ввода");
-    }
-    if (val > 100) {
-      alert("Ошибка ввода");
-    }
-    if (val < 1) {
-      alert("Ошибка ввода");
-    }
-    if (val >= 1) {
-      if (val <=100) {
+    } else {
         alert(val);
-      }
     }
 }
 
